@@ -1,19 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const promos = require("./data/promos.json");
+const controller = require("./controller");
 
-router.get("/", (req, res) => {
-  res.render("accueil");
-});
+router.get("/", controller.accueil);
 
-router.get("/promos", (req, res) => {
-  res.render("promos", { promos });
-});
+router.get("/promos", controller.promos);
 
-router.get("/promo/:id", (req, res) => {
-  const id = Number(req.params.id);
-  const promo = promos.find((promo) => promo.id === id);
-  res.render("promo", { promo });
-});
+router.get("/promo/:id", controller.promo);
 
 module.exports = router;
