@@ -10,4 +10,10 @@ router.get("/promos", (req, res) => {
   res.render("promos", { promos });
 });
 
+router.get("/promo/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const promo = promos.find((promo) => promo.id === id);
+  res.render("promo", { promo });
+});
+
 module.exports = router;
