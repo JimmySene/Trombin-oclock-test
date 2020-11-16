@@ -1,0 +1,28 @@
+{
+  "name": "Trombi-oclock-test",
+  "version": "1.0.0",
+  "description": "Application de test (Express.js) affichant les promos et élèves de l'école X",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JimmySene/Trombin-oclock-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimmySene/Trombin-oclock-test/issues"
+  },
+  "homepage": "https://github.com/JimmySene/Trombin-oclock-test#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
