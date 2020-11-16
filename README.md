@@ -29,3 +29,11 @@ Mail du client :
 | 5   | visiteur | avoir les détails d'une promo                             | \*                                              | 1      |
 | 6   | admin    | éditer les profils des utilisateurs                       | pouvoir voir sa photo de profil et informations | 2      |
 | 7   | admin    | éditer les détails d'une promo                            | \*                                              | 2      |
+
+### Wireframes :
+
+Accueil :  
+![Wireframe de la page d'accueil](./docs/accueil.jpg)
+
+Promos :  
+![Wireframe de la page promos](./docs/promos.jpg)
