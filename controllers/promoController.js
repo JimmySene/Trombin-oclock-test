@@ -1,19 +1,22 @@
-const promosData = require("../data/promos.json");
-const studentsData = require("../data/students.json");
+const dataMapper = require("../dataMapper");
 
-exports.promos = (req, res) => {
-  res.render("promos", { promos: promosData });
+exports.promos = (req, res, next) => {
+  dataMapper.promos((promos) => {
+    if (!promos) next();
+    else res.render("promos", { promos });
+  });
 };
 
-exports.promo = (req, res) => {
-  const id = Number(req.params.id);
-  const promo = promosData.find((promo) => promo.id === id);
-  res.render("promo", { promo });
+exports.promo = (req, res, next) => {
+  dataMapper.promo(Number(req.params.id), (promo) => {
+    if (!promo) next();
+    else res.render("promo", { promo });
+  });
 };
 
-exports.promoStudents = (req, res) => {
-  const id = Number(req.params.id);
-  const promo = promosData.find((promo) => promo.id === id);
-  const students = studentsData.filter((student) => student.promo === id);
-  res.render("students", { promo, students });
+exports.promoStudents = (req, res, next) => {
+  dataMapper.promoStudents(Number(req.params.id), (promo, students) => {
+    if (!promo || !students) next();
+    res.render("students", { promo, students });
+  });
 };
