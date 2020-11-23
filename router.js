@@ -1,11 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("./controller");
 
-router.get("/", controller.accueil);
+const mainController = require("./controllers/mainController");
+const promoController = require("./controllers/promoController");
+const studentController = require("./controllers/studentController");
+const adminController = require("./controllers/adminController");
 
-router.get("/promos", controller.promos);
+router.get("/", mainController.home);
 
-router.get("/promo/:id", controller.promo);
+router.get("/promos", promoController.promos);
+
+router.get("/promo/:id", promoController.promo);
+
+router.get("/promo/:id/students", promoController.promoStudents);
 
 module.exports = router;

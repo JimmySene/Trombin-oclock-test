@@ -6,7 +6,7 @@ const router = require("./router");
 require("dotenv").config();
 
 app.set("view engine", "ejs");
-app.use(express.static("/public"));
+app.use(express.static("./public"));
 
 app.use(router);
 
