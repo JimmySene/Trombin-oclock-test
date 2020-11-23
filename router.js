@@ -14,4 +14,8 @@ router.get("/promo/:id", promoController.promo);
 
 router.get("/promo/:id/students", promoController.promoStudents);
 
+router.get("/student/:id", studentController.student);
+
+router.use(mainController.notFound);
+
 module.exports = router;

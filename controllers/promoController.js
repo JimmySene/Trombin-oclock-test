@@ -2,7 +2,7 @@ const promosData = require("../data/promos.json");
 const studentsData = require("../data/students.json");
 
 exports.promos = (req, res) => {
-  res.render("promos", { promos });
+  res.render("promos", { promos: promosData });
 };
 
 exports.promo = (req, res) => {
